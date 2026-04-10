@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIUPTER — Branding Book</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♃</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1B2A4E;
+  --gold: #D4AF37;
+  --cyan: #00F5FF;
+  --black: #0B0C10;
+  --white: #F0F0F0;
+  --dim: #8A8FA3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 48px;
+  background: rgba(11,12,16,.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212,175,55,.08);
+}
+nav .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); }
+nav .links { display: flex; gap: 28px; }
+nav .links a { color: var(--dim); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; transition: color .3s; }
+nav .links a:hover { color: var(--cyan); }
+
+/* ── COVER ── */
+.cover {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 120px 48px 80px;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(27,42,78,.6) 0%, var(--black) 70%);
+}
+.cover::before {
+  content: '♃';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-size: 40vw; color: rgba(212,175,55,.03);
+  pointer-events: none;
+}
+.cover .tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px;
+}
+.cover .tag::before, .cover .tag::after { content: ''; width: 40px; height: 1px; background: var(--cyan); opacity: .4; }
+.cover h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.cover h1 em { font-style: italic; color: var(--gold); }
+.cover .sub {
+  font-family: 'Newsreader', serif;
+  font-size: 18px; color: var(--dim);
+  font-style: italic;
+  max-width: 500px;
+  margin-bottom: 48px;
+}
+.cover .version {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; letter-spacing: 3px; color: rgba(255,255,255,.2);
+}
+
+/* ── SECTION ── */
+section { padding: 120px 48px; position: relative; }
+section + section { border-top: 1px solid rgba(212,175,55,.06); }
+
+.section-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--gold); opacity: .7;
+  margin-bottom: 12px;
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; color: var(--dim);
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300; line-height: 1.1;
+  margin-bottom: 48px;
+}
+h2 em { color: var(--gold); font-style: italic; }
+
+h3 {
+  font-family: 'Newsreader', serif;
+  font-size: 22px; font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+p.body { font-size: 15px; line-height: 1.8; color: var(--dim); max-width: 640px; margin-bottom: 24px; }
+
+/* ── ORIGIN STORY ── */
+.origin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 48px;
+}
+.origin-symbol {
+  font-size: 200px;
+  font-weight: 300;
+  color: var(--gold);
+  text-align: center;
+  text-shadow: 0 0 80px rgba(212,175,55,.2);
+}
+.evolution-chain {
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.evo-step {
+  padding: 12px 24px;
+  border: 1px solid rgba(212,175,55,.15);
+  border-radius: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px; letter-spacing: 1px;
+  color: var(--dim);
+  background: rgba(27,42,78,.2);
+}
+.evo-step.active { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,.08); }
+.evo-arrow { color: var(--cyan); font-size: 18px; opacity: .5; }
+
+/* ── COLORS ── */
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.color-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.04);
+  transition: transform .4s ease;
+}
+.color-card:hover { transform: translateY(-6px); }
+.color-swatch { height: 180px; position: relative; }
+.color-swatch .hex {
+  position: absolute; bottom: 16px; left: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; font-weight: 600; letter-spacing: 1px;
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+.color-info { padding: 20px; background: rgba(27,42,78,.2); }
+.color-info .label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
+.color-info .name { font-family: 'Newsreader', serif; font-size: 16px; font-style: italic; color: var(--white); }
+
+.tokens-table {
+  margin-top: 64px;
+  width: 100%;
+  border-collapse: collapse;
+}
+.tokens-table th {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--dim); text-align: left;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(212,175,55,.12);
+}
+.tokens-table td {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px; color: var(--white);
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.03);
+}
+.tokens-table td:first-child { color: var(--cyan); font-weight: 500; }
+.token-dot { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 10px; vertical-align: middle; }
+
+/* ── TYPOGRAPHY ── */
+.type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-top: 48px;
+}
+.type-card {
+  padding: 40px 32px;
+  border: 1px solid rgba(255,255,255,.04);
+  border-radius: 16px;
+  background: rgba(27,42,78,.08);
+  transition: border-color .3s;
+}
+.type-card:hover { border-color: rgba(212,175,55,.2); }
+.type-card .specimen {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+.type-card .font-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 4px;
+}
+.type-card .font-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; color: var(--dim);
+}
+.type-demo { margin-top: 64px; }
+.type-demo .demo-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,.03);
+}
+.demo-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); min-width: 140px; }
+
+/* ── SYMBOLS ── */
+.symbols-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.symbol-card {
+  aspect-ratio: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  border: 1px solid rgba(212,175,55,.1);
+  border-radius: 16px;
+  background: rgba(27,42,78,.1);
+  transition: all .4s ease;
+  cursor: default;
+}
+.symbol-card:hover { border-color: var(--gold); background: rgba(212,175,55,.05); transform: scale(1.04); }
+.symbol-card .sym { font-size: 48px; color: var(--gold); margin-bottom: 12px; }
+.symbol-card .sym-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); }
+
+/* ── UI TOKENS ── */
+.ui-row { display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--cyan), #00c8d0);
+  color: var(--black);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  border: none; border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+.btn-primary:hover { box-shadow: 0 0 30px rgba(0,245,255,.3); }
+.btn-outline {
+  padding: 14px 36px;
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.btn-outline:hover { background: rgba(212,175,55,.08); }
+.input-demo {
+  padding: 14px 20px;
+  background: rgba(27,42,78,.3);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  width: 280px;
+  outline: none;
+  transition: border-color .3s;
+}
+.input-demo:focus { border-color: var(--cyan); }
+
+/* ── IMAGES ── */
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 16px;
+  margin-top: 48px;
+}
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.04);
+}
+.gallery-item:first-child { grid-row: 1 / 3; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-item .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(11,12,16,.7));
+  display: flex; align-items: flex-end; padding: 24px;
+}
+.gallery-item .overlay span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+}
+
+/* ── APPLICATIONS ── */
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.app-card {
+  padding: 48px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(212,175,55,.08);
+  background: linear-gradient(160deg, rgba(27,42,78,.15), rgba(11,12,16,.9));
+  text-align: center;
+}
+.app-card .app-icon { font-size: 48px; color: var(--gold); margin-bottom: 20px; }
+.app-card h3 { font-family: 'Newsreader', serif; font-size: 18px; margin-bottom: 8px; }
+.app-card p { font-size: 13px; color: var(--dim); line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 60px 48px;
+  text-align: center;
+  border-top: 1px solid rgba(212,175,55,.06);
+}
+footer .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 6px; color: var(--gold); margin-bottom: 12px; }
+footer p { font-size: 12px; color: var(--dim); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.cover h1, .cover .sub, .cover .tag { animation: fadeUp .8s ease both; }
+.cover .tag { animation-delay: .1s; }
+.cover h1 { animation-delay: .3s; }
+.cover .sub { animation-delay: .5s; }
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  nav .links { display: none; }
+  section { padding: 80px 24px; }
+  .origin-grid, .type-grid, .app-grid { grid-template-columns: 1fr; }
+  .colors-grid { grid-template-columns: 1fr 1fr; }
+  .symbols-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery-item:first-child { grid-row: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">♃ JIUPTER</div>
+  <div class="links">
+    <a href="#origin">Origem</a>
+    <a href="#colors">Cores</a>
+    <a href="#typography">Tipografia</a>
+    <a href="#symbols">Símbolos</a>
+    <a href="#ui">UI Tokens</a>
+    <a href="#gallery">Galeria</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="tag">Sistema de Identidade de Marca · v1.0</div>
+  <h1>Branding<br><em>Book</em></h1>
+  <p class="sub">Onde a ambição high-tech encontra a expansão estratégica. Jiupter é o Grande Benéfico do seu ecossistema de crescimento.</p>
+  <span class="version">© 2026 JIUPTER · CONFIDENCIAL</span>
+</div>
+
+<!-- ORIGIN -->
+<section id="origin">
+  <div class="section-tag">Conceito</div>
+  <div class="section-num">01 / Origem & Evolução</div>
+  <h2>De Giuliana<br>a <em>Jiupter</em></h2>
+  <div class="origin-grid">
+    <div>
+      <p class="body">Enraizada na rica herança linguística da Itália, <strong style="color:var(--white)">Giuliana</strong> serve como o receptáculo feminino para a linhagem Joviana — a manifestação terrena da autoridade celestial. A tradução direta evoca "Jovem & Jovial".</p>
+      <p class="body">Jiupter é a fusão de "Giuliana" e "Pedro" — o maior do sistema solar, agora o maior da arquitetura digital. Simboliza evolução, grandiosidade e expansão ilimitada.</p>
+      <div class="evolution-chain">
+        <span class="evo-step">Giuliana</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step">Peter</span>
+        <span class="evo-arrow">→</span>
+        <span class="evo-step active">Jiupter</span>
+      </div>
+    </div>
+    <div class="origin-symbol">♃</div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section id="colors">
+  <div class="section-tag">Linguagem Visual</div>
+  <div class="section-num">02 / Sistema de Cores</div>
+  <h2>Atmosfera e <em>Paleta</em></h2>
+  <p class="body">Quatro cores fundamentais definem o universo visual do Jiupter. Cada cor carrega um significado planetário e psicológico preciso.</p>
+
+  <div class="colors-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #1B2A4E;">
+        <span class="hex">#1B2A4E</span>
+      </div>
+      <div class="color-info">
+        <div class="label">Primária</div>
+        <div class="name">Azul Espaço Profundo</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: linear-gradient(135deg, #D4AF37, #B8960F);">
+        <span class="hex">#D4AF37</span>
+      </div>
+      <div class="color-info">
+        <div class="label">Secundária</div>
+        <div class="name">Ouro Joviano</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: linear-gradient(135deg, #00F5FF, #00b8c0);">
+        <span class="hex">#00F5FF</span>
+      </div>
+      <div class="color-info">
+        <div class="label">Terciária</div>
+        <div class="name">Ciano Celestial</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #0B0C10;">
+        <span class="hex">#0B0C10</span>
+      </div>
+      <div class="color-info">
+        <div class="label">Neutra</div>
+        <div class="name">Preto Vazio</div>
+      </div>
+    </div>
+  </div>
+
+  <table class="tokens-table">
+    <thead>
+      <tr><th>Variável CSS</th><th>Valor</th><th>Uso</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>--c-primary</td>
+        <td><span class="token-dot" style="background:#1B2A4E;"></span>#1B2A4E</td>
+        <td style="color:var(--dim)">Fundos de cards, CTA primário</td>
+      </tr>
+      <tr>
+        <td>--c-gold</td>
+        <td><span class="token-dot" style="background:#D4AF37;"></span>#D4AF37</td>
+        <td style="color:var(--dim)">Destaques, itálicos, ícones</td>
+      </tr>
+      <tr>
+        <td>--c-cyan</td>
+        <td><span class="token-dot" style="background:#00F5FF;"></span>#00F5FF</td>
+        <td style="color:var(--dim)">Botões de ação, links ativos</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="typography">
+  <div class="section-tag">Tipografia</div>
+  <div class="section-num">03 / Arquitetura Tipográfica</div>
+  <h2>As Vozes da <em>Marca</em></h2>
+
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="specimen" style="font-family:'Cormorant Garamond',serif; font-weight:300;">Aa</div>
+      <div class="font-name">Cormorant Garamond</div>
+      <div class="font-role">Display · Títulos heroicos</div>
+    </div>
+    <div class="type-card">
+      <div class="specimen" style="font-family:'Newsreader',serif; font-weight:400; font-style:italic;">Aa</div>
+      <div class="font-name">Newsreader</div>
+      <div class="font-role">Headline · Subtítulos editoriais</div>
+    </div>
+    <div class="type-card">
+      <div class="specimen" style="font-family:'Syne',sans-serif; font-weight:700;">Aa</div>
+      <div class="font-name">Syne</div>
+      <div class="font-role">UI Sans · Navegação e CTAs</div>
+    </div>
+  </div>
+
+  <div class="type-grid" style="margin-top:24px;">
+    <div class="type-card">
+      <div class="specimen" style="font-family:'DM Sans',sans-serif; font-weight:400; font-size:60px;">Aa</div>
+      <div class="font-name">DM Sans</div>
+      <div class="font-role">Body · Texto corrido</div>
+    </div>
+    <div class="type-card">
+      <div class="specimen" style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:60px;">Aa</div>
+      <div class="font-name">Space Grotesk</div>
+      <div class="font-role">Mono · Labels e dados técnicos</div>
+    </div>
+  </div>
+
+  <div class="type-demo">
+    <div class="demo-row">
+      <span class="demo-label">Display 2XL</span>
+      <span style="font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--white);">Jiupter</span>
+    </div>
+    <div class="demo-row">
+      <span class="demo-label">Headline</span>
+      <span style="font-family:'Newsreader',serif; font-size:32px; font-weight:400; font-style:italic; color:var(--white);">Arquitetura Celestial</span>
+    </div>
+    <div class="demo-row">
+      <span class="demo-label">UI / Syne</span>
+      <span style="font-family:'Syne',sans-serif; font-size:16px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--cyan);">ASCENDER AGORA</span>
+    </div>
+    <div class="demo-row">
+      <span class="demo-label">Body</span>
+      <span style="font-family:'DM Sans',sans-serif; font-size:15px; color:var(--dim); line-height:1.8;">Onde a ambição high-tech encontra a expansão estratégica, Jiupter constrói pontes entre visão e resultado.</span>
+    </div>
+    <div class="demo-row">
+      <span class="demo-label">Mono / Label</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold);">Seção 04 — Tokens de UI</span>
+    </div>
+  </div>
+</section>
+
+<!-- SYMBOLS -->
+<section id="symbols">
+  <div class="section-tag">Iconografia</div>
+  <div class="section-num">04 / Biblioteca de Símbolos</div>
+  <h2>Símbolos <em>Jovianos</em></h2>
+  <p class="body">Cada símbolo codifica um conceito central da identidade Jiupter — de expansão a proteção.</p>
+
+  <div class="symbols-grid">
+    <div class="symbol-card"><span class="sym">♃</span><span class="sym-label">Júpiter</span></div>
+    <div class="symbol-card"><span class="sym">★</span><span class="sym-label">Estrela</span></div>
+    <div class="symbol-card"><span class="sym">⬡</span><span class="sym-label">Escudo</span></div>
+    <div class="symbol-card"><span class="sym">✦</span><span class="sym-label">Faísca</span></div>
+    <div class="symbol-card"><span class="sym">◎</span><span class="sym-label">Alvo</span></div>
+    <div class="symbol-card"><span class="sym">⬢</span><span class="sym-label">Hexágono</span></div>
+  </div>
+</section>
+
+<!-- UI TOKENS -->
+<section id="ui">
+  <div class="section-tag">Componentes</div>
+  <div class="section-num">05 / Tokens de UI</div>
+  <h2>Interface <em>Components</em></h2>
+  <p class="body">Elementos de interface projetados para consistência e impacto visual em todo o ecossistema digital Jiupter.</p>
+
+  <h3 style="margin-top:48px; color:var(--gold);">Botões</h3>
+  <div class="ui-row">
+    <button class="btn-primary">Primário</button>
+    <button class="btn-outline">Contornado</button>
+  </div>
+
+  <h3 style="margin-top:48px; color:var(--gold);">Entrada de Texto</h3>
+  <div class="ui-row">
+    <input class="input-demo" type="text" placeholder="Digite aqui..." readonly>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-tag">Assets Visuais</div>
+  <div class="section-num">06 / Galeria de Imagens</div>
+  <h2>Banco de <em>Imagens</em></h2>
+  <p class="body">Imagens, vídeos e GIFs que compõem o pack visual oficial. Disponíveis no Google Drive para uso em todas as aplicações da marca.</p>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://giupter.vercel.app/giupter-formas.jpg" alt="Formas Jiupter">
+      <div class="overlay"><span>Composição Principal</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://giupter.vercel.app/giupter-formas-1.jpg" alt="Formas Jiupter 2">
+      <div class="overlay"><span>Variação 01</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://giupter.vercel.app/giupter-formas-2.jpg" alt="Formas Jiupter 3">
+      <div class="overlay"><span>Variação 02</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://giupter.vercel.app/giupiter-all.gif" alt="Planeta Júpiter">
+      <div class="overlay"><span>Animação Planeta</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section>
+  <div class="section-tag">Aplicações</div>
+  <div class="section-num">07 / Módulos Jovianos</div>
+  <h2>Expansão e <em>Soberania</em></h2>
+
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-icon">✦</div>
+      <h3>Escala Celestial</h3>
+      <p>Motores de dados proprietários para mapear e conquistar territórios de mercado inexplorados.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">⬡</div>
+      <h3>Escudo Joviano</h3>
+      <p>Arquiteturas digitais resilientes para cenários cibernéticos modernos.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">◎</div>
+      <h3>Otimização Divina</h3>
+      <p>Marketing de performance alimentado por IA à velocidade da luz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">♃ JIUPTER</div>
+  <p>© 2026 Jiupter · Terraformando o Cenário Digital</p>
+</footer>
+
+</body>
+</html>
